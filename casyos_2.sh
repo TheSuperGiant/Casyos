@@ -9,8 +9,6 @@ AUR_helper="paru"
 #pre_2
 source <(curl -s -L https://raw.githubusercontent.com/TheSuperGiant/Arch/refs/heads/main/parts/pre_2.sh)
 
-sud
-
 #dns
 source <(curl -s -L $TheSuperGiant_Arch_repo_uri__parts/dns.sh)
 
@@ -40,13 +38,6 @@ source <(curl -s -L $TheSuperGiant_Arch_repo_uri__parts/install_need.sh)
 
 #install needs
 source <(curl -s -L $TheSuperGiant_Arch_repo_uri__parts/install_needs.sh)
-
-if [[ "$Firewall__Default" == "1" ]]; then
-	ufw=1
-	if [[ "$firewall_Recommanded_rules" == "1" ]]; then
-		fail2ban=1
-	fi
-fi
 
 box_part "Installing programs"
 
